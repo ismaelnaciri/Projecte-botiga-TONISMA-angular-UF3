@@ -6,6 +6,7 @@ import { TitolLogoComponent } from './titol-logo/titol-logo.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { CistellaComponent } from './cistella/cistella.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CistellaComponent } from './cistella/cistella.component';
     CistellaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
