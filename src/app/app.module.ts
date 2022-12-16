@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { CistellaComponent } from './cistella/cistella.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CatalegComponent } from './cataleg/cataleg.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
     TitolLogoComponent,
     MenuComponent,
     FooterComponent,
-    CistellaComponent
+    CistellaComponent,
+    CatalegComponent
   ],
   imports: [
     BrowserModule,
