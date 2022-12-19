@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CistellaComponent } from './cistella/cistella.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegistreANDLoginComponent } from './registre-andlogin/registre-andlogin.component';
+import { CatalegComponent } from './cataleg/cataleg.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { RegistreANDLoginComponent } from './registre-andlogin/registre-andlogin
     MenuComponent,
     FooterComponent,
     CistellaComponent,
-    RegistreANDLoginComponent
+    RegistreANDLoginComponent,
+    CistellaComponent,
+    CatalegComponent
   ],
   imports: [
     BrowserModule,
