@@ -1,0 +1,14 @@
+#login-form{
+  width: auto;
+  text-align: center;
+  margin-right: 40%;
+  margin-top: 5%;
+}
+.email{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.contrasenya{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
