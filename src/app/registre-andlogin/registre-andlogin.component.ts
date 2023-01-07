@@ -26,10 +26,21 @@ export class RegistreANDLoginComponent implements OnInit{
     }
     //@ts-ignore
     botoLogin.onclick = function checkIfDataCorrect () {
-      let email
-      localStorage.getItem("email")
-      localStorage.getItem("password")
+      //@ts-ignore
+      let email = document.getElementById("username_login").value;
+      //@ts-ignore
+      let password = document.getElementById("password_login").value;
 
+      let checkEmail = localStorage.getItem("email")
+      let checkPassword = localStorage.getItem("password")
+
+      if ((email == checkEmail) && (password == checkPassword)){
+        alert("Login successful!!!")
+        return true
+      } else {
+        alert("Login failed, try again with different credentials")
+        return false
+      }
     }
   }
 }
