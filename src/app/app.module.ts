@@ -9,6 +9,7 @@ import { CistellaComponent } from './cistella/cistella.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegistreANDLoginComponent } from './registre-andlogin/registre-andlogin.component';
 import { CatalegComponent } from './cataleg/cataleg.component';
+import { CondicionsComponent } from './condicions/condicions.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CatalegComponent } from './cataleg/cataleg.component';
     CistellaComponent,
     RegistreANDLoginComponent,
     CistellaComponent,
-    CatalegComponent
+    CatalegComponent,
+    CondicionsComponent
   ],
   imports: [
     BrowserModule,

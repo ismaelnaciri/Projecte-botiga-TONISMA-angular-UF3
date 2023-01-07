@@ -1,14 +1,38 @@
 #login-form{
   width: auto;
   text-align: center;
-  margin-right: 40%;
-  margin-top: 5%;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 5%;
 }
-.email{
-  margin-top: 10px;
+.email_login{
+  margin-top: 20px;
   margin-bottom: 20px;
 }
-.contrasenya{
-  margin-top: 10px;
+.contrasenya_login{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#sign-in-form {
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  margin-top: 6%;
+  margin-left: 9%;
+  margin-right: 25%;
+  border-left: black solid 1px;
+  padding-left: 150px;
+  height: 500px;
+}
+.nom{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.email_signin{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.contrasenya_signin{
+  margin-top: 20px;
   margin-bottom: 20px;
 }
