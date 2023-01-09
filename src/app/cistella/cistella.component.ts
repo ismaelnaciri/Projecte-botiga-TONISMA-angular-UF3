@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cistella',
   templateUrl: './cistella.component.html',
   styleUrls: ['./cistella.component.css']
 })
-export class CistellaComponent {
+export class CistellaComponent implements OnInit{
 
+  cistella: number[];
+
+  constructor(private s: ServeisService) {
+  }
+
+  ngOnInit() {
+  }
 }

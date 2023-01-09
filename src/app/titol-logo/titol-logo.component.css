@@ -1,10 +1,11 @@
 header{
   background-color: black;
   color: white;
+
 }
 #logo{
   float: left;
-  display: inline;
+  display: inline-block;
 }
 header h1{
   text-align: center;
@@ -12,3 +13,18 @@ header h1{
 header p{
   text-align: center
 }
+.login_button{
+  display: inline-block;
+}
+#logout {
+  color: -webkit-activelink;
+  display: inline-block;
+}
+#userInteractions{
+  margin-left: 93%;
+}
+#userName {
+  color: red;
+
+}
+
