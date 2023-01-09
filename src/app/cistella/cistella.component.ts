@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ServeisService} from "../serveis.service";
 
 @Component({
   selector: 'app-cistella',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CistellaComponent implements OnInit{
 
-  cistella: number[];
+  // cistella: number[];
 
   constructor(private s: ServeisService) {
   }

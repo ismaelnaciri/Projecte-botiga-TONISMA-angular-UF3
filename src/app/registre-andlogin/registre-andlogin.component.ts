@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./registre-andlogin.component.css']
 })
 export class RegistreANDLoginComponent implements OnInit{
+  mostrar: any;
   constructor() {
   }
 
@@ -36,10 +37,10 @@ export class RegistreANDLoginComponent implements OnInit{
 
       if ((email == checkEmail) && (password == checkPassword)){
         alert("Login successful!!!")
-        return true
+        let correcte = localStorage.setItem("emailnou", email);
       } else {
         alert("Login failed, try again with different credentials")
-        return false
+
       }
     }
   }
