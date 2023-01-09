@@ -8,8 +8,7 @@ import {ServeisService} from "../serveis.service";
 })
 export class TitolLogoComponent implements OnInit{
   mostrar: any;
-  constructor(private s: ServeisService) {
-    this.s.isLoggedIn = false;
+  constructor() {
   }
   ngOnInit() {
     this.mostrar = localStorage.getItem("emailnou");

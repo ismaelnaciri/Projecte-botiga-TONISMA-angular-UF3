@@ -1,12 +1,14 @@
-<article>
-      <p>Entrega GRATIS en 3 dies laborals. <br><br>
-        <strong>En Stock.</strong> <br><br>
-        Quantitat: <select name="quantity" autocomplete="off" id="quantitat" tabindex="0" data-action="a-dropdown-select"
-                           class="a-native-dropdown a-declarative"> <option value="1" selected="">1 </option>
-          <option value="2">2 </option>  <option value="3">3 </option> <option value="4">4 </option>
-          <option value="5">5 </option>  <option value="6">6 </option></select><br><br>
+<form>
+  <h3>Cart</h3>
 
-      <div class="centrar_compra">
-        <input id="Comprar_ara" name="Comprar_ara" class="a-button-input" type="submit" value="Comprar ara">
-      </div>
-</article>
+  <h4 *ngIf="items.length === 0">
+    No items found, go <a routerLink="/">shopping</a>!
+  </h4>
+
+
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency }}</span>
+  </div>
+  <button class="button" type="submit">Purchase</button>
+</form>

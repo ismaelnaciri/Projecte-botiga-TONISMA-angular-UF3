@@ -39,7 +39,7 @@ export class RegistreANDLoginComponent implements OnInit{
         alert("Login successful!!!")
         let correcte = localStorage.setItem("emailnou", email);
       } else {
-        alert("Login failed, try again with different credentials")
+        alert("Login failed, try again with different credentiales")
 
       }
     }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServeisService {
-  public isLoggedIn: boolean;
+
+  items: Product[] = [];
 
   constructor() {
-    this.isLoggedIn = false;
   }
 }

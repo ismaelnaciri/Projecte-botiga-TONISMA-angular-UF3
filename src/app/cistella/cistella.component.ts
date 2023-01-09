@@ -8,7 +8,6 @@ import {ServeisService} from "../serveis.service";
 })
 export class CistellaComponent implements OnInit{
 
-  // cistella: number[];
 
   constructor(private s: ServeisService) {
   }
