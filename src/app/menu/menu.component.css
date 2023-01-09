@@ -8,7 +8,6 @@ html {
   width: 99%;
   height: 49px;
   top:0;
-  z-index: 9;
   margin-left: 9px;
 }
 #menu a {
@@ -25,4 +24,10 @@ html {
   color: black;
   border-bottom: 5px solid red;
   padding: 12px 15px;
+}
+#botoRegistreClient{
+  display: block;
+  float: right;
+  margin-right: 20px;
+  margin-top: 3px;
 }

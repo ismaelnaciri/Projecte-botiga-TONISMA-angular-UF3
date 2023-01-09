@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {ServeisService} from "../serveis.service";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-titol-logo',
@@ -9,10 +8,10 @@ import {ServeisService} from "../serveis.service";
 export class TitolLogoComponent implements OnInit{
   mostrar: any;
   constructor(private s: ServeisService) {
-
+    this.s.isLoggedIn = false;
   }
   ngOnInit() {
-    this.mostrar = localStorage.getItem("emailNou");
+    this.mostrar = localStorage.getItem("email");
     let logOutOnClick = document.getElementById("logout");
     //@ts-ignore
     logOutOnClick.onclick = function sortirSessio (){
