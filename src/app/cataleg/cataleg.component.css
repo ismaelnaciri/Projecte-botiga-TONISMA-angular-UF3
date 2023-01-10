@@ -2,79 +2,10 @@ html {
   height: 100%;
 }
 body {
-  position: relative;
   min-height: 100%;
 }
-#play5{
-  text-align: left;
-  display: inline-block;
-  text-align: center;
-  margin-left: 40px;
+img {
+  height: 250px;
+  width: 250px;
+  display: inline;
 }
-#mandoPlay5{
-  text-align: center;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#juegoPs5{
-  text-align: right;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#play4{
-  text-align: right;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#xboxX{
-  text-align: right;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#nintendoSwitch{
-  text-align: left;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#mandoPlay4{
-  text-align: left;
-  display: inline-block;
-  text-align: center;
-  margin-left: 40px;
-}
-#mandoXboxX{
-  text-align: left;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#mandoNintendoSwitch{
-  text-align: center;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#juegoPs4{
-  text-align: center;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#juegoXboxX{
-  text-align: center;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-#juegoNintendoSwitch{
-  text-align: right;
-  display: inline-block;
-  text-align: center;
-  margin-left: 100px;
-}
-

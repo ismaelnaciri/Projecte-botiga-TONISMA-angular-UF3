@@ -1,14 +1,16 @@
-<!--<form>-->
-<!--  <h3>Cart</h3>-->
+<article>
 
-<!--  <h4 *ngIf="items.length === 0">-->
-<!--    No items found, go <a routerLink="/">shopping</a>!-->
-<!--  </h4>-->
+  <h4 *ngIf="items.length === 0">
+    <p>No tents cap producte.<p>
+    <button class="back" routerLink="/cataleg"> Torna al cataleg</button></p>
+  </h4>
 
-
-<!--  <div class="cart-item" *ngFor="let item of items">-->
-<!--    <span>{{ item.name }}</span>-->
-<!--    <span>{{ item.price | currency }}</span>-->
-<!--  </div>-->
-<!--  <button class="button" type="submit">Purchase</button>-->
-<!--</form>-->
+  <div class="producte" *ngFor="let item of items; let i = index">
+    <img src="{{item.img}}" alt="" class="img-pro"> <br>
+    <h3>{{ item.name }} </h3>
+    <h2>
+      {{item.preu * item.quantity}} € <input type="number" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
+    </h2>
+    <button (click)="esborrar(i)">DELETE</button>
+  </div>
+</article>
