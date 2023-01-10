@@ -1,11 +1,26 @@
-html {
-  height: 100%;
+.producte{
+  float: right;
+  width: 350px
 }
-body {
-  min-height: 100%;
+
+.img-pro{
+  height: 60%;
+  width: 60%;
 }
-img {
-  height: 250px;
-  width: 250px;
+
+.preu-quantitat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BotoCompra{
+  display: flex;
+  flex-direction: row;
+  border-collapse: collapse;
+}
+li{
   display: inline;
+  color: black;
 }

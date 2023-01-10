@@ -9,7 +9,6 @@ import { Product, products } from "../Productes";
 })
 export class CatalegComponent implements OnInit {
   products = products;
-
   constructor(private s: ServeisService) {
   }
 
@@ -20,4 +19,11 @@ export class CatalegComponent implements OnInit {
     this.s.addToCart(product);
     window.alert((`${product.name} s'ha afegit a la cistella.`))
   }
+
+  filterShown (product: Product) {
+    let filtratgeA = product.type = 'Joc'
+
+  }
+
+
 }

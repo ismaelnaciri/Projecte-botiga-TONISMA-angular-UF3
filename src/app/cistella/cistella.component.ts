@@ -42,6 +42,9 @@ export class CistellaComponent implements OnInit{
     }
     return total;
   }
+  public clearAll() {
+    document.location.reload();
+  }
 
   ngOnInit() {
   }

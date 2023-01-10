@@ -2,6 +2,27 @@ body {
   min-height: 100%;
 }
 img {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
+  display: block;
+}
+div {
+  display: inline-block;
+  max-width: 300px;
+  margin-right: 20px;
+}
+#Comprar_ara {
+  cursor: pointer;
+  -webkit-appearance: button;
+  width: 200px;
+  height: 30px;
+  background-color: orangered;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+}
+.centrar_compra {
+  padding: 30px;
+  width: 100%;
+  float: right;
 }
