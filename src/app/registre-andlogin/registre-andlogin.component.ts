@@ -22,8 +22,7 @@ export class RegistreANDLoginComponent implements OnInit{
       email = document.getElementById("username_signin").value;
       //@ts-ignore
       password = document.getElementById("password_signin").value;
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
+
     }
     //@ts-ignore
     botoLogin.onclick = function checkIfDataCorrect () {
@@ -33,11 +32,10 @@ export class RegistreANDLoginComponent implements OnInit{
       let password = document.getElementById("password_login").value;
 
       let checkEmail = localStorage.getItem("email")
-      let checkPassword = localStorage.getItem("password")
+      let checkPassword = localStorage.getItem("password");
 
       if ((email == checkEmail) && (password == checkPassword)){
         alert("Login successful!!!")
-        let correcte = localStorage.setItem("emailnou", email);
       } else {
         alert("Login failed, try again with different credentials")
 
