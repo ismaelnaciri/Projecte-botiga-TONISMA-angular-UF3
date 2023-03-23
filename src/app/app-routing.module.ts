@@ -5,13 +5,15 @@ import { RegistreANDLoginComponent } from './registre-andlogin/registre-andlogin
 import { CatalegComponent } from './cataleg/cataleg.component'
 import { CondicionsComponent } from "./condicions/condicions.component";
 import { IniciComponent } from "./inici/inici.component";
+import { ContacteComponent} from "./contacte/contacte.component";
 
 const routes: Routes = [
   {path: 'inici', component: IniciComponent},
   {path: 'cistella', component: CistellaComponent},
   {path: 'signin', component: RegistreANDLoginComponent},
   {path: 'cataleg', component: CatalegComponent},
-  {path: 'condicions', component: CondicionsComponent}
+  {path: 'condicions', component: CondicionsComponent},
+  {path: 'contacte', component: ContacteComponent}
 
 ]
 
