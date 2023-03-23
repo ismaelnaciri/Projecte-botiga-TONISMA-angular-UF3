@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpParams} from "@angular/common/http";
 
 @Component({
   selector: 'app-registre-andlogin',
@@ -31,15 +32,7 @@ export class RegistreANDLoginComponent implements OnInit{
       //@ts-ignore
       let password = document.getElementById("password_login").value;
 
-      let checkEmail = localStorage.getItem("email")
-      let checkPassword = localStorage.getItem("password");
 
-      if ((email == checkEmail) && (password == checkPassword)){
-        alert("Login successful!!!")
-      } else {
-        alert("Login failed, try again with different credentials")
-
-      }
     }
   }
 }

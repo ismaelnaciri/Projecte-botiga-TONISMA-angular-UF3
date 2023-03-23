@@ -11,6 +11,8 @@ import { RegistreANDLoginComponent } from './registre-andlogin/registre-andlogin
 import { CatalegComponent } from './cataleg/cataleg.component';
 import { CondicionsComponent } from './condicions/condicions.component';
 import { IniciComponent } from './inici/inici.component';
+import { ContacteComponent } from './contacte/contacte.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { IniciComponent } from './inici/inici.component';
     CistellaComponent,
     CatalegComponent,
     CondicionsComponent,
-    IniciComponent
+    IniciComponent,
+    ContacteComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
