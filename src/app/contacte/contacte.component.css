@@ -83,3 +83,29 @@ article {
 iframe {
   padding-top: 15px;
 }
+#footer_lletres{
+  color: black;
+}
+footer {
+  background-color: white;
+  height: 30%;
+  width: auto;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.Facebook {
+  height: 50px;
+  margin: 0.5em;
+}
+
+.Twitter {
+  height: 50px;
+  margin: 0.5em;
+}
+
+.Instagram {
+  height: 50px;
+  margin: 0.5em;
+}
