@@ -11,10 +11,9 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
 
-    let req = new HttpParams().set('email', 'xd@gmail.com');
-    let xd = req.set('password', '1234523122')
 
-    this.http.get<any>("http://localhost:3080/api/login", {params: req}).subscribe((clients) => {
+
+    this.http.get<any>("http://localhost:3080/api/login").subscribe((clients) => {
       console.log(clients);
       console.log(clients.email);
     });
