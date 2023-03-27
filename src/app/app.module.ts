@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {RecaptchaComponent, RecaptchaModule} from "ng-recaptcha";
 import { AppComponent } from './app.component';
 import { TitolLogoComponent } from './titol-logo/titol-logo.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,6 +13,7 @@ import { CondicionsComponent } from './condicions/condicions.component';
 import { IniciComponent } from './inici/inici.component';
 import { ContacteComponent } from './contacte/contacte.component';
 import { HttpClientModule } from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

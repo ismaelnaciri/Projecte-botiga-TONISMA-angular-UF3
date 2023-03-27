@@ -8,11 +8,18 @@ import {HttpParams} from "@angular/common/http";
 })
 export class RegistreANDLoginComponent implements OnInit{
   mostrar: any;
+  email:any;
+  password:any;
+  nom:any;
+  contrasenya:any;
+  correu:any;
+
+
   constructor() {
   }
 
   ngOnInit() {
-
+/*
     let botoRegister = document.getElementById("submitData");
     let botoLogin = document.getElementById("checkData");
     //@ts-ignore
@@ -33,6 +40,6 @@ export class RegistreANDLoginComponent implements OnInit{
       let password = document.getElementById("password_login").value;
 
 
-    }
+    }*/
   }
 }

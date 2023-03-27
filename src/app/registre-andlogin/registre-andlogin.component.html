@@ -1,7 +1,7 @@
-<form id="login-form" name="loginForm"><h1>Iniciar sesión</h1>Email<div class="email_login"><input value="" id="username_login" name="usr"></div>
-  Contrasenya <div class="contrasenya_login"><input type="password" value="" id="password_login" name="pw"></div><button type="submit" id="checkData">Iniciar sesión</button></form>
+<form id="login-form" name="loginForm"><h1>Iniciar sesión</h1>Email<div class="email_login"><input value="" id="username_login" name="usr"  [(ngModel)]="email"></div>
+  Contrasenya <div class="contrasenya_login"><input type="password" value="" id="password_login" name="pw" [(ngModel)]="password"></div><button type="submit" id="checkData">Iniciar sesión</button></form>
 
-<form id="sign-in-form" name="signupForm"><h1>Registra't</h1>Nom<div class="nom"><input value="" id="nom"></div>
-Email<div class="email_signin"><input value="" id="username_signin"></div>
-Contrasenya <div class="contrasenya_signin"><input type="password" value="" id="password_signin"></div>
+<form id="sign-in-form" name="signupForm" ><h1>Registra't</h1>Nom<div class="nom"><input value="" id="nom" [(ngModel)]="nom"></div>
+Email<div class="email_signin"><input value="" id="username_signin" [(ngModel)]="correu"></div>
+Contrasenya <div class="contrasenya_signin"><input type="password" value="" id="password_signin" [(ngModel)]="contrasenya"></div>
   <button type="submit" id="submitData">Registrar-se</button></form>
