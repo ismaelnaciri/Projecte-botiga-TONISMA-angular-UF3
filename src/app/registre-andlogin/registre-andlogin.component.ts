@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UsersService} from "../users.service";
 
-// @ts-ignore
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
@@ -25,13 +24,17 @@ export class RegistreANDLoginComponent implements OnInit{
   password:any;
   correuTrobat: any;
 
-/*
+  //Contacte
+  missatge: any;
+
+
   async autenticar() {
     let errorMessage = ' ';
 
+
     await this.firebaseAuth.signInWithEmailAndPassword(this.email, this.password)
       .then(res => {
-        this.serveiUsuari.autenticat = false;
+        this.serveiUsuari.autenticat = true;
         this.serveiUsuari.usuari = JSON.stringify(res.user);
         this.serveiUsuari.emailAutenticat = this.email;
         this.correuTrobat = false;
@@ -54,53 +57,62 @@ export class RegistreANDLoginComponent implements OnInit{
       alert("Entrada denegada! \n" + errorMessage);
     }
   }
-*/
+
   Logout(){
     this.serveiUsuari.autenticat = false;
     this.autenticat= false;
     this.nomAutenticat= 'null';
   }
 
-  registrar()
-  {
-    this.http.post<any>('http://localhost:3080/registrar', {
-      Correu: this.correu,
-      Nom: this.nom,
-      Contrasenya:this.contrasenya
-    }).subscribe();
+  async registrar() {
+    for (let i = 0; i < this.serveiUsuari.arrClients.clients.length; i++) {
+      if (this.serveiUsuari.arrClients.clients[i].Correu == this.correu) {
+        this.correuTrobat = true;
+      }
+    } if (this.correuTrobat) {
+      alert("Ja existeix un usuari registrat amb aquest correu!")
+    } else {
+      this.http.post<any>('http://172.16.8.1:3080/datausers', {
+        Correu: this.correu,
+        Nom: this.nom,
+        Contrasenya:this.contrasenya
+      }).subscribe();
+      this.http.post<any>('http://172.16.8.1:3080/signup', {
+        email: this.email,
+        password: this.password
+      }).subscribe();
+      this.http.post<any>('http://172.16.8.1:3080/log',{
+        log: 'registre',
+        nom: this.nom,
+        correu: this.correu
+      }).subscribe();
 
+      await this.router.navigate(['/login']);
+    }
   }
 
   constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, public firebaseAuth: AngularFireAuth) {
-
-  }
-
-  ngOnInit() {
-/*
-    let botoRegister = document.getElementById("submitData");
-    let botoLogin = document.getElementById("checkData");
-    //@ts-ignore
-    botoRegister.onclick = function storeData() {
-      let email, password;
-
-      // @ts-ignore
-      email = document.getElementById("username_signin").value;
-      //@ts-ignore
-      password = document.getElementById("password_signin").value;
-
+    if(this.autenticat){
+      this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
     }
-    //@ts-ignore
-    botoLogin.onclick = function checkIfDataCorrect () {
-      //@ts-ignore
-      let email = document.getElementById("username_login").value;
-      //@ts-ignore
-      let password = document.getElementById("password_login").value;
-
-
-    }*/
   }
+
+
+
+
+
+
+
+
+  /*
+  this.http.post<any>('http://localhost:3080/registrar', {
+    Correu: this.correu,
+    Nom: this.nom,
+    Contrasenya:this.contrasenya
+  }).subscribe();
+*/
+
+
 }
-function registrar() {
-    throw new Error('Function not implemented.');
-}
+
 
