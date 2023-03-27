@@ -12,9 +12,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
   styleUrls: ['./registre-andlogin.component.css']
 })
 export class RegistreANDLoginComponent implements OnInit{
-  mostrar: any;
-  email:any;
-  password:any;
+  //Registrar
   nom:any;
   contrasenya:any;
   correu:any;
