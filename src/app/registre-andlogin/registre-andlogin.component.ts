@@ -10,7 +10,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
   templateUrl: './registre-andlogin.component.html',
   styleUrls: ['./registre-andlogin.component.css']
 })
-export class RegistreANDLoginComponent implements OnInit{
+export class RegistreANDLoginComponent  {
   //Registrar
   nom:any;
   contrasenya:any;
@@ -49,8 +49,8 @@ export class RegistreANDLoginComponent implements OnInit{
           alert("Sembla que no disposem de les dades d'aquest client!");
         }
       })
-      .catch((error) => {
-        const errorCode = error.code;
+      .catch((error: any) => {
+
         errorMessage = error.message;
       })
     if (!this.serveiUsuari.autenticat) {
