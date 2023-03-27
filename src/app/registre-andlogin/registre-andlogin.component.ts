@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {UsersService} from "../users.service";
 
@@ -72,16 +72,16 @@ export class RegistreANDLoginComponent implements OnInit{
     } if (this.correuTrobat) {
       alert("Ja existeix un usuari registrat amb aquest correu!")
     } else {
-      this.http.post<any>('http://172.16.8.1:3080/datausers', {
+      this.http.post<any>('http://localhost:3080/datausers', {
         Correu: this.correu,
         Nom: this.nom,
         Contrasenya:this.contrasenya
       }).subscribe();
-      this.http.post<any>('http://172.16.8.1:3080/signup', {
+      this.http.post<any>('http://localhost:3080/signup', {
         email: this.email,
         password: this.password
       }).subscribe();
-      this.http.post<any>('http://172.16.8.1:3080/log',{
+      this.http.post<any>('http://localhost:3080/log',{
         log: 'registre',
         nom: this.nom,
         correu: this.correu
