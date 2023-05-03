@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ServeisService} from "../serveis.service";
-import { Product, products } from "../Productes";
+import {HttpClient} from "@angular/common/http";
+
+//import { Product, products } from "../Productes";
 
 @Component({
   selector: 'app-cataleg',
@@ -8,21 +10,30 @@ import { Product, products } from "../Productes";
   styleUrls: ['./cataleg.component.css']
 })
 export class CatalegComponent implements OnInit {
-  products = products;
-  constructor(private s: ServeisService) {
+  products: any;
+
+  constructor(private s: ServeisService, private http: HttpClient) {
+    this.listProductes();
   }
 
   ngOnInit() {
   }
 
-  addToCart(product: Product){
-    this.s.addToCart(product);
-    window.alert((`${product.name} s'ha afegit a la cistella.`))
+  listProductes() {
+    this.http.get('http://localhost:3080/productes')
+      .subscribe(data => {
+        this.products = data;
+      });
   }
 
-  filterShown (product: Product) {
-    let filtratgeA = product.type = 'Joc'
+  addToCart(product: any){
+    product.quantity = 1;
+    this.s.addToCart(product);
+    window.alert((`${product.nom} s'ha afegit a la cistella.`))
+  }
 
+  filterShown (product: any) {
+    let filtratgeA = product.type = 'Joc'
   }
 
 

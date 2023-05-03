@@ -7,9 +7,9 @@
 
   <div class="producte" *ngFor="let item of items; let i = index">
     <img src="{{item.img}}" alt="" class="img-pro"> <br>
-    <h3>{{ item.name }} </h3>
+    <h3>{{ item.nom }} </h3>
     <h2>
-      {{item.preu * item.quantity}} € <input type="number" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
+      {{item.preu * item.quantity}} € <input type="number" min="1" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
     </h2>
     <button (click)="esborrar(i)">DELETE</button>
   </div>

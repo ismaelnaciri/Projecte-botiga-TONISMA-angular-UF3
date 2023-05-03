@@ -28,16 +28,16 @@ export class RegistreANDLoginComponent  {
   missatge: any;
 
 
-  async autenticar() {
+  /*async autenticar() {
     let errorMessage = ' ';
 
-
+    this.correuTrobat = false;
     await this.firebaseAuth.signInWithEmailAndPassword(this.email, this.password)
       .then(res => {
         this.serveiUsuari.autenticat = true;
         this.serveiUsuari.usuari = JSON.stringify(res.user);
         this.serveiUsuari.emailAutenticat = this.email;
-        this.correuTrobat = false;
+
 
         for (let i = 0; i < this.serveiUsuari.arrClients.clients.length; i++) {
           if (this.serveiUsuari.arrClients.clients[i].Correu == this.email) {
@@ -56,7 +56,7 @@ export class RegistreANDLoginComponent  {
     if (!this.serveiUsuari.autenticat) {
       alert("Entrada denegada! \n" + errorMessage);
     }
-  }
+  }*/
 
   Logout(){
     this.serveiUsuari.autenticat = false;
@@ -91,19 +91,13 @@ export class RegistreANDLoginComponent  {
     }
   }
 
-  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, public firebaseAuth: AngularFireAuth) {
-    if(this.autenticat){
+  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, /*public firebaseAuth: AngularFireAuth*/) {
+   /* if(this.autenticat){
       this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
-    }
+    }*/
   }
 
-
-
-
-
-
-
-
+}
   /*
   this.http.post<any>('http://localhost:3080/registrar', {
     Correu: this.correu,
@@ -113,6 +107,5 @@ export class RegistreANDLoginComponent  {
 */
 
 
-}
 
 
