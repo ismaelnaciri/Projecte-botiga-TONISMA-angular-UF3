@@ -14,6 +14,7 @@ import { IniciComponent } from './inici/inici.component';
 import { ContacteComponent } from './contacte/contacte.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { GrafiquesComponent } from './grafiques/grafiques.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {FormsModule} from "@angular/forms";
     CondicionsComponent,
     IniciComponent,
     ContacteComponent,
+    GrafiquesComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { CatalegComponent } from './cataleg/cataleg.component'
 import { CondicionsComponent } from "./condicions/condicions.component";
 import { IniciComponent } from "./inici/inici.component";
 import { ContacteComponent} from "./contacte/contacte.component";
+import { GrafiquesComponent} from "./grafiques/grafiques.component";
 
 const routes: Routes = [
   {path: 'inici', component: IniciComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'signin', component: RegistreANDLoginComponent},
   {path: 'cataleg', component: CatalegComponent},
   {path: 'condicions', component: CondicionsComponent},
-  {path: 'contacte', component: ContacteComponent}
+  {path: 'contacte', component: ContacteComponent},
+  {path: 'grafiques',component: GrafiquesComponent}
 
 ]
 

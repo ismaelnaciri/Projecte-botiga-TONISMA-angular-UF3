@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ServeisService} from "../serveis.service";
 import {Product} from "../Productes";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-cistella',
@@ -10,7 +11,7 @@ import {Product} from "../Productes";
 export class CistellaComponent implements OnInit{
   items = this.s.getItems();
 
-  constructor(private s: ServeisService) {
+  constructor(private s: ServeisService, private http:HttpClient) {
   }
 
   premerEnviar (): void{
@@ -44,6 +45,16 @@ export class CistellaComponent implements OnInit{
   }
   public clearAll() {
     document.location.reload();
+  }
+
+  compraProducte(){
+    this.http.post('http://localhost:3080/compres', { json: this.items })
+      .subscribe({
+        error: error => {
+          console.error("There was an error", error);
+        }
+      })
+    this.clearAll()
   }
 
   ngOnInit() {
