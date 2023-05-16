@@ -10,7 +10,7 @@
   <button type="submit" id="checkData">Iniciar sesión</button>
 </form>
 
-<form id="sign-in-form" name="signupForm"   >
+<form id="sign-in-form" name="signupForm"  (submit)="registrar()" >
   <h1>Registra't</h1>Nom<div class="nom">
   <input value="" id="nom" [(ngModel)]="nom" [ngModelOptions]="{standalone: true}">
 </div>

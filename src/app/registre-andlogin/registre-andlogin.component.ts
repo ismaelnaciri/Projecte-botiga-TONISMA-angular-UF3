@@ -5,6 +5,7 @@ import {UsersService} from "../users.service";
 
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
+
 @Component({
   selector: 'app-registre-andlogin',
   templateUrl: './registre-andlogin.component.html',
@@ -12,6 +13,9 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 })
 export class RegistreANDLoginComponent  {
   //Registrar
+
+  registre: any[] =[]
+
   nom:any;
   contrasenya:any;
   correu:any;
@@ -27,13 +31,21 @@ export class RegistreANDLoginComponent  {
   //Contacte
   missatge: any;
 */
-  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, /*public firebaseAuth: AngularFireAuth*/) {
+  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService,/*public firebaseAuth: AngularFireAuth*/) {
    /* if(this.autenticat){
       this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
     }*/
     this.http.get<any>("http://localhost:3080/api/login").subscribe()
   }
 
+  registrar(){
+    this.registre=[{
+      nom:this.nom,
+      contrasenya:this.contrasenya,
+      correu:this.correu
+    }]
+    this.http.post("http://localhost:3080/api/login",{json:this.registre}).subscribe();
+  }
 
 
 }
