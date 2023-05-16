@@ -23,12 +23,21 @@ export class RegistreANDLoginComponent  {
   email:any;
   password:any;
   correuTrobat: any;
-
+/*
   //Contacte
   missatge: any;
+*/
+  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, /*public firebaseAuth: AngularFireAuth*/) {
+   /* if(this.autenticat){
+      this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
+    }*/
+    this.http.get<any>("http://localhost:3080/api/login").subscribe()
+  }
 
 
-  /*async autenticar() {
+
+}
+/*async autenticar() {
     let errorMessage = ' ';
 
     this.correuTrobat = false;
@@ -57,7 +66,7 @@ export class RegistreANDLoginComponent  {
       alert("Entrada denegada! \n" + errorMessage);
     }
   }*/
-
+/*
   Logout(){
     this.serveiUsuari.autenticat = false;
     this.autenticat= false;
@@ -89,15 +98,8 @@ export class RegistreANDLoginComponent  {
 
       await this.router.navigate(['/login']);
     }
-  }
+  }*/
 
-  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService, /*public firebaseAuth: AngularFireAuth*/) {
-   /* if(this.autenticat){
-      this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
-    }*/
-  }
-
-}
   /*
   this.http.post<any>('http://localhost:3080/registrar', {
     Correu: this.correu,
