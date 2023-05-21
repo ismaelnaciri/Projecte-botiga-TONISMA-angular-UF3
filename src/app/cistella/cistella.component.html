@@ -2,15 +2,17 @@
 
   <div class="centrar_compra">
     <select name="cryptos" id="cryptosID">
+      <option value="default">Selecciona moneda</option>
       <option value="EUROS" id="EUROS">Euros</option>
       <option value="DOLARS" id="DOLARS">U.S. Dollars</option>
       <option value="BNB" id="BNB">BNB</option>
       <option value="BTC" id="BTC">Bitcoin</option>
       <option value="ETH" id="ETH">Ethereum</option>
     </select>
-    <h2>{{preuVariable}} {{this.monedaSimbol}}</h2>
+    <h2>{{canviMoneda}} {{monedaSimbol}}</h2>
     <br>
-    <input id="Comprar_ara" name="Comprar_ara" class="a-button-input" type="submit" value="Comprar ara" (click)="compraProducte()">
+    <input id="Comprar_ara" name="Comprar_ara" class="a-button-input" type="submit"
+           value="Comprar ara" (click)="compraProducte()">
   </div>
 
   <div class="vacio">
@@ -25,7 +27,8 @@
       <img src="{{item.img}}" alt="" class="img-pro"> <br>
       <h3>{{ item.nom }} </h3>
       <h2>
-        {{item.preu * item.quantity}} € <input type="number" min="1" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
+        {{item.preu * item.quantity}} €
+        <input type="number" min="1" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)" id="test">
       </h2>
       <button (click)="esborrar(i)">DELETE</button>
     </div>

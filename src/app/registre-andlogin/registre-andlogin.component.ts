@@ -47,6 +47,9 @@ export class RegistreANDLoginComponent  {
     this.http.post("http://localhost:3080/api/login",{json:this.registre}).subscribe();
   }
 
+  openMetaMaskWallet() {
+
+  }
 
 }
 /*async autenticar() {
