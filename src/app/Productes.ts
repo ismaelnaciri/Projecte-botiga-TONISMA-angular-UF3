@@ -12,7 +12,7 @@ export const products= [
     preu: 799,
     img: "http://localhost:3080/imatges/play 5.jpg",
     quantity: 1,
-    type: "Console"
+    type: "Consola"
   },
   {
     name:"Dualshock 5",
@@ -33,21 +33,21 @@ export const products= [
     preu: 399,
     img: "http://localhost:3080/imatges/play4.jpg",
     quantity: 1,
-    type: "Console"
+    type: "Consola"
   },
   {
     name:"Xbox Series X",
     preu: 499,
     img: "http://localhost:3080/imatges/xboxX.jpg",
     quantity: 1,
-    type: "Console"
+    type: "Consola"
   },
   {
     name:"Nintendo Switch",
     preu: 310,
     img: "http://localhost:3080/imatges/nintendoSwitch.jpg",
     quantity: 1,
-    type: "Console"
+    type: "Consola"
   },
   {
     name:"Dualshock 4",

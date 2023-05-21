@@ -2,15 +2,31 @@ body {
   min-height: 100%;
 }
 img {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   display: block;
 }
 div {
-  display: inline-block;
   max-width: 300px;
   margin-right: 20px;
 }
+article {
+  display: inline;
+}
+.producte {
+  display: inline-block;
+}
+.estruturaCarrito {
+  max-width: 70%;
+}
+
+.centrar_compra {
+  display: inline-block;
+  padding: 30px;
+  width: 100%;
+  float: right;
+}
+
 #Comprar_ara {
   cursor: pointer;
   -webkit-appearance: button;
@@ -21,8 +37,7 @@ div {
   border-radius: 10px;
   color: white;
 }
-.centrar_compra {
-  padding: 30px;
-  width: 100%;
-  float: right;
+
+.vacio {
+  margin-left: 12px;
 }

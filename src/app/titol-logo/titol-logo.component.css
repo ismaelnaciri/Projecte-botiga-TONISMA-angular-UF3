@@ -15,15 +15,13 @@ header p{
 .login_button{
   display: inline-block;
 }
-#logout {
-  color: -webkit-activelink;
-  display: inline-block;
+.username_intitle {
+  margin-right: 10px;
 }
-#userInteractions{
-  margin-left: 90%;
-}
-#userName {
-  color: red;
 
+#userName {
+  text-align: right;
+  font-size: 20px;
+  color: red;
 }
 

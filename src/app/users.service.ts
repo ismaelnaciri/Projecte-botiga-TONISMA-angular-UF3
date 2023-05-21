@@ -1,19 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
-  public autenticat= false;
-  public posAutenticat = -1;
+export class UsersService implements OnInit {
+  public autenticat: boolean | undefined;
+  public posAutenticat = 0;
   public emailAutenticat: any;
-  public arrClients: any;
+  public arrClients: any[] = [];
   public usuari: any;
+
+  pep = "pep"
+
   constructor(private http:HttpClient) {
-    this.http.get<any>('http://localhost:3080/api/firebase').subscribe((document)=>{
-      this.arrClients = document;
-    });
+    this.arrClients[0] = this.pep;
+    this.arrClients[1] = "jose";
+    // this.http.get<any>('http://localhost:3080/api/firebase').subscribe((document) =>{
+    //   this.arrClients = document;
+    // });
+  }
+
+  ngOnInit(): void {
+
   }
 }
 

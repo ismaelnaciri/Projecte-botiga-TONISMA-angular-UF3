@@ -31,7 +31,7 @@ export class RegistreANDLoginComponent  {
   //Contacte
   missatge: any;
 */
-  constructor(private http:HttpClient,public router:Router, private serveiUsuari: UsersService,/*public firebaseAuth: AngularFireAuth*/) {
+  constructor(private http:HttpClient, public router:Router, private serveiUsuari: UsersService,/*public firebaseAuth: AngularFireAuth*/) {
    /* if(this.autenticat){
       this.nomAutenticat = this.serveiUsuari.arrClients.clients[this.serveiUsuari.posAutenticat].Nom;
     }*/

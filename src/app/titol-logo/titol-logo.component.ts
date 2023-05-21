@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ServeisService} from "../serveis.service";
+import {UsersService} from "../users.service";
 
 @Component({
   selector: 'app-titol-logo',
@@ -7,16 +7,15 @@ import {ServeisService} from "../serveis.service";
   styleUrls: ['./titol-logo.component.css']
 })
 export class TitolLogoComponent implements OnInit{
-  mostrar: any;
-  constructor() {
-  }
-  ngOnInit() {
-    this.mostrar = localStorage.getItem("emailnou");
 
-    let logOutOnClick = document.getElementById("logout");
-    //@ts-ignore
-    logOutOnClick.onclick = function sortirSessio (){
-      window.localStorage.clear();
-    }
+  name: any;
+
+  constructor(private s: UsersService) {
+    if (this.s.autenticat == true)
+      this.name = this.s.arrClients[this.s.posAutenticat];
+  }
+
+
+  ngOnInit() {
   }
 }

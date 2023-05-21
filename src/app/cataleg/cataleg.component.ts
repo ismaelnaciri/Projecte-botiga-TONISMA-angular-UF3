@@ -29,11 +29,13 @@ export class CatalegComponent implements OnInit {
   addToCart(product: any){
     product.quantity = 1;
     this.s.addToCart(product);
-    window.alert((`${product.nom} s'ha afegit a la cistella.`))
+    window.alert((`${product.name} s'ha afegit a la cistella.`))
   }
 
   filterShown (product: any) {
-    let filtratgeA = product.type = 'Joc'
+    let filtratgeJoc = product.type = "Joc";
+    let filtratgeConsola = product.type = "Consola";
+    let filtratgeMando = product.type = "Mando";
   }
 
 

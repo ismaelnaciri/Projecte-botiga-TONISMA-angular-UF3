@@ -14,13 +14,10 @@ export class AppComponent {
 
 
 
-    this.http.get<any>("http://localhost:3080/api/login").subscribe((clients) => {
-
-
-
-      console.log(clients);
-      console.log(clients.email);
-    });
+    // this.http.get<any>("http://localhost:3080/api/login").subscribe((clients) => {
+    //   console.log(clients);
+    //   console.log(clients.email);
+    // });
 
 
   }

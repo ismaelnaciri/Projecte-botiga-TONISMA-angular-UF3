@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {UsersService} from "../users.service";
 
 @Component({
   selector: 'app-menu',
@@ -6,7 +7,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit{
-  constructor() {
+  constructor(private s: UsersService) {
+  }
+
+  logout() {
+    this.s.autenticat = false;
+    window.alert(`S'ha tancat la sessió.`);
+    window.location.reload();
   }
 
   ngOnInit() {

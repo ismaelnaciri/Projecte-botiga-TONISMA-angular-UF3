@@ -1,21 +1,35 @@
 <article>
 
-  <h4 *ngIf="items.length === 0">
+  <div class="centrar_compra">
+    <select name="cryptos" id="cryptosID">
+      <option value="EUROS" id="EUROS">Euros</option>
+      <option value="DOLARS" id="DOLARS">U.S. Dollars</option>
+      <option value="BNB" id="BNB">BNB</option>
+      <option value="BTC" id="BTC">Bitcoin</option>
+      <option value="ETH" id="ETH">Ethereum</option>
+    </select>
+    <h2>{{preuVariable}} {{this.monedaSimbol}}</h2>
+    <br>
+    <input id="Comprar_ara" name="Comprar_ara" class="a-button-input" type="submit" value="Comprar ara" (click)="compraProducte()">
+  </div>
+
+  <div class="vacio">
+    <h4 *ngIf="items.length === 0" style="width: 300px">
     <p>No tents cap producte.<p>
     <button class="back" routerLink="/cataleg"> Torna al cataleg</button></p>
   </h4>
-
-  <div class="producte" *ngFor="let item of items; let i = index">
-    <img src="{{item.img}}" alt="" class="img-pro"> <br>
-    <h3>{{ item.nom }} </h3>
-    <h2>
-      {{item.preu * item.quantity}} € <input type="number" min="1" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
-    </h2>
-    <button (click)="esborrar(i)">DELETE</button>
   </div>
 
-  <div class="centrar_compra">
-    <input id="Comprar_ara" name="Comprar_ara" class="a-button-input" type="submit" value="Comprar ara" (click)="compraProducte()">
+  <div class="estruturaCarrito">
+    <div class="producte" *ngFor="let item of items; let i = index">
+      <img src="{{item.img}}" alt="" class="img-pro"> <br>
+      <h3>{{ item.nom }} </h3>
+      <h2>
+        {{item.preu * item.quantity}} € <input type="number" min="1" class="qty" [value]="item.quantity" (blur)="ValidateInput($event,i)">
+      </h2>
+      <button (click)="esborrar(i)">DELETE</button>
+    </div>
   </div>
+
 </article>
-<app-footer></app-footer>
+
