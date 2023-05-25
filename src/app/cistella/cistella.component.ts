@@ -58,6 +58,12 @@ export class CistellaComponent implements OnInit{
     }
   }
 
+  async compraBNB(){
+    const test = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,binancecoin,ethereum,dollars&vs_currencies=eur");
+    const conversio = await test.json();
+    this.canviMoneda = this.preuVariable / conversio.binancecoin.eur;
+  }
+
   premerEnviar (): void{
     this.items = this.s.clearItems();
   }
@@ -84,6 +90,12 @@ export class CistellaComponent implements OnInit{
       this.items[i].coin = coin;
   }
 
+  public PriceUpdate(price: number){
+    for (let i = 0; i < this.items.length; i++)
+      this.items[i].price = price;
+  }
+
+
   public calcularTotal(): number{
     let total: number = 0;
     for (let item of this.items){
@@ -99,6 +111,8 @@ export class CistellaComponent implements OnInit{
 
   compraProducte(){
     this.CoinUpdate(this.monedaSimbol);
+    this.compraBNB()
+    this.PriceUpdate(this.canviMoneda)
 
     this.http.post('http://localhost:3080/compres', { json: this.items })
       .subscribe({

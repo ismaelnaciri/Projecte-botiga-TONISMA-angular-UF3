@@ -15,6 +15,7 @@ import { ContacteComponent } from './contacte/contacte.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { GrafiquesComponent } from './grafiques/grafiques.component';
+import { F2pComponent } from './f2p/f2p.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GrafiquesComponent } from './grafiques/grafiques.component';
     IniciComponent,
     ContacteComponent,
     GrafiquesComponent,
+    F2pComponent,
   ],
   imports: [
     BrowserModule,
