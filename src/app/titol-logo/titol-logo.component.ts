@@ -9,13 +9,20 @@ import {UsersService} from "../users.service";
 export class TitolLogoComponent implements OnInit{
 
   name: any;
+  wallet = "";
 
   constructor(private s: UsersService) {
     if (this.s.autenticat == true)
       this.name = this.s.arrClients[this.s.posAutenticat];
+
   }
 
 
   ngOnInit() {
+
+  }
+
+  update() {
+    this.wallet = this.s.walletName;
   }
 }

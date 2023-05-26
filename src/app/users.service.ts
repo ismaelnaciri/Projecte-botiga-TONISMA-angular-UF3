@@ -10,12 +10,10 @@ export class UsersService implements OnInit {
   public emailAutenticat: any;
   public arrClients: any[] = [];
   public usuari: any;
+  public walletName: any;
 
-  pep = "pep"
 
   constructor(private http:HttpClient) {
-    this.arrClients[0] = this.pep;
-    this.arrClients[1] = "jose";
     // this.http.get<any>('http://localhost:3080/api/firebase').subscribe((document) =>{
     //   this.arrClients = document;
     // });

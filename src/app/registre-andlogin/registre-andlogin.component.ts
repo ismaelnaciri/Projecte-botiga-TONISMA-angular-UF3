@@ -48,7 +48,23 @@ export class RegistreANDLoginComponent  {
   }
 
   openMetaMaskWallet() {
-
+    //@ts-ignore
+    document.getElementById("checkData").addEventListener('click', (event) => {
+      let account;
+      //@ts-ignore
+      ethereum.request({method: 'eth_requestAccounts'}).then((accounts: any[]) => {
+        account = accounts[0];
+        this.serveiUsuari.walletName = account;
+        console.log(account);
+        //@ts-ignore
+        window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']}).then((result: string) => {
+          console.log(result);
+          let wei = parseInt(result, 16);
+          let balance = wei / (10**18);
+          console.log(balance + " ETH");
+        })
+      })
+    })
   }
 
 }
