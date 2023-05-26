@@ -4,7 +4,14 @@ import {Router} from "@angular/router";
 import {UsersService} from "../users.service";
 
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Interface} from "ethers";
 
+
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
 
 @Component({
   selector: 'app-registre-andlogin',
@@ -47,16 +54,48 @@ export class RegistreANDLoginComponent  {
     this.http.post("http://localhost:3080/api/login",{json:this.registre}).subscribe();
   }
 
-  openMetaMaskWallet() {
+  // openMetaMaskWallet() {
+  //   //@ts-ignore
+  //   document.getElementById("checkData").addEventListener('click', (event) => {
+  //     let account;
+  //     //@ts-ignore
+  //     ethereum.request({method: 'eth_requestAccounts'}).then((accounts: any[]) => {
+  //       account = accounts[0];
+  //       this.serveiUsuari.walletName = account;
+  //       console.log(account);
+  //       //@ts-ignore
+
+        // window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']}).then((result: string) => {
+        //   console.log(result);
+        //   let wei = parseInt(result, 16);
+        //   let balance = wei / (10**18);
+        //   console.log(balance + " ETH");
+        // })
+      // })
+    // })
+
+  async loginWallet() {
+    if (window.ethereum) {
+      try {
+        // Request account access from the user
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        console.log('User has logged in with MetaMask!');
+
+        // Additional logic after successful login
+
+      } catch (error) {
+        console.error('Error logging in with MetaMask:', error);
+      }
+    } else {
+      console.error('MetaMask is not installed');
+    }
     //@ts-ignore
     document.getElementById("checkData").addEventListener('click', (event) => {
       let account;
-      //@ts-ignore
-      ethereum.request({method: 'eth_requestAccounts'}).then((accounts: any[]) => {
+      window.ethereum.request({method: 'eth_requestAccounts'}).then((accounts: any[]) => {
         account = accounts[0];
-        this.serveiUsuari.walletName = account;
         console.log(account);
-        //@ts-ignore
+
         window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']}).then((result: string) => {
           console.log(result);
           let wei = parseInt(result, 16);
@@ -66,7 +105,6 @@ export class RegistreANDLoginComponent  {
       })
     })
   }
-
 }
 /*async autenticar() {
     let errorMessage = ' ';

@@ -7,7 +7,8 @@
   <div class="contrasenya_login">
     <input type="password" value="" id="password_login" name="pw" [ngModelOptions]="{standalone: true}" [(ngModel)]="password">
   </div>
-  <button type="submit" id="checkData" (click)="openMetaMaskWallet()">Iniciar sesión</button>
+  <button type="submit" id="checkData" (click)="loginWallet()">Iniciar sesión</button>
+  <button type="button"  (click)="loginWallet()">log meta</button>
 </form>
 
 <form id="sign-in-form" name="signupForm"  (submit)="registrar()" >

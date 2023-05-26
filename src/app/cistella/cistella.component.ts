@@ -66,9 +66,10 @@ export class CistellaComponent implements OnInit{
   }
 
   async compraBNB(){
-    const test = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,binancecoin,ethereum,dollars&vs_currencies=eur");
+    const test = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,binancecoin,ethereum,dollars&vs_currencies=eur,usd,btc");
     const conversio = await test.json();
     this.canviMoneda = this.preuVariable / conversio.binancecoin.eur;
+    console.log(this.canviMoneda + "BNB")
   }
 
   premerEnviar (): void{
@@ -113,12 +114,16 @@ export class CistellaComponent implements OnInit{
   }
 
   public clearAll() {
-    document.location.reload();
+    for (let i = 0; i < this.items.length; i++) {
+      this.esborrar(i);
+      this.canviMoneda = 0;
+      this.monedaSimbol = '€';
+    }
   }
 
   async compraProducte(){
     this.CoinUpdate(this.monedaSimbol);
-    this.compraBNB()
+    await this.compraBNB()
     this.PriceUpdate(this.canviMoneda)
 
     this.http.post('http://localhost:3080/compres', { json: this.items })
@@ -127,26 +132,19 @@ export class CistellaComponent implements OnInit{
           console.error("There was an error", error);
         }
       })
-
-    this.clearAll()
-
-    let res = ();
     let params = [
       {
-        from: this.serv.walletName,
+        // from: this.serv.walletName,
+        from: "0xEe6e5A87F17b6f587497d158e86Ee810E24a47F6",
         to: "0x14c083cFbC76533D684A75D6eA4ba9933213e45a",
-        value: Number(res).toString(16),
+        value: Number(this.canviMoneda).toString(16),
         data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
       },
     ]
     //@ts-ignore
-    await window.ethereum.send({method: "eth_requestAccounts"}, params);
-    // //@ts-ignore
-    // const provider = new ethers.providers.Web3Provider(window.ethereum);
-    // const signer = provider.getSigner();
-    // const temp = ethers.getAddress(this.serv.walletName);
-    // //@ts-ignore
-    // console.log(temp)
+    await window.ethereum.request({method: "eth_sendTransaction"}, params);
+
+    this.clearAll()
   }
 
 }
