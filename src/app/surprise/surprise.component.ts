@@ -4,10 +4,10 @@ import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-f2p',
-  templateUrl: './f2p.component.html',
-  styleUrls: ['./f2p.component.css']
+  templateUrl: './surprise.component.html',
+  styleUrls: ['./surprise.component.css']
 })
-export class F2pComponent implements OnInit{
+export class SurpriseComponent implements OnInit{
 
   constructor(private http:HttpClient) {
 

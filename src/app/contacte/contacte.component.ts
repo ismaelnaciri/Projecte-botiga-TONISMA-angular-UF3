@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as http from "http";
 import {HttpClient} from "@angular/common/http";
+import {RegistreLoginService} from "../registre-login.service";
 
 @Component({
   selector: 'app-contacte',
@@ -12,7 +13,18 @@ export class ContacteComponent {
   mail: any;
   missatge: any;
 
-  constructor(private http: HttpClient) {
+  autenticat = this.registraServei.autenticat
+  nomAutenticat = this.registraServei.nomAutenticat
+
+  constructor(private http: HttpClient, private registraServei: RegistreLoginService) {
+  }
+
+  tancarSessio(){
+    this.registraServei.autenticat = false;
+    this.registraServei.nomAutenticat = 'null';
+    this.autenticat= false;
+    this.nomAutenticat= 'null';
+    console.log("funciona clic")
   }
 
   escriure() {

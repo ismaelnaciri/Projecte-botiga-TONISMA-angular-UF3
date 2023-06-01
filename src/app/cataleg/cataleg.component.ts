@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ServeisService} from "../serveis.service";
 import {HttpClient} from "@angular/common/http";
+import {RegistreLoginService} from "../registre-login.service";
 
 //import { Product, products } from "../Productes";
 
@@ -11,9 +12,18 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CatalegComponent implements OnInit {
   products: any;
+  autenticat = this.registreServei.autenticat
+  nomAutenticat = this.registreServei.nomAutenticat
 
-  constructor(private s: ServeisService, private http: HttpClient) {
+  constructor(private s: ServeisService, private http: HttpClient, private registreServei: RegistreLoginService) {
     this.listProductes();
+  }
+
+  tancarSessio(){
+    this.registreServei.autenticat = false;
+    this.registreServei.nomAutenticat = 'null';
+    this.autenticat= false;
+    this.nomAutenticat= 'null';
   }
 
   ngOnInit() {

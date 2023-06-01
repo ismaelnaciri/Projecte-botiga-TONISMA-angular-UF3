@@ -1,4 +1,20 @@
-<body style="height: 100%">
+<nav id="menu">
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/cataleg" routerLinkActive="active">Catàleg</a>
+  <a routerLink="/registre" routerLinkActive="active">Registre Client</a>
+  <a routerLink="/cistella" routerLinkActive="active">Cistella</a>
+  <a routerLink="/condicions" routerLinkActive="active">Condicions</a>
+  <a routerLink="/contacte" routerLinkActive="active">Contacte</a>
+  <a *ngIf="autenticat" routerLink="/perfil" routerLinkActive="active">Perfil</a>
+  <div id="loginbar">
+    <a *ngIf="!autenticat" class="ab-item" id="login" routerLink="/login" routerLinkActive="active">Inicia la sessió</a>
+    <div *ngIf="autenticat" id="test">
+      <h3>Hola, {{nomAutenticat}}</h3>
+      <button (click)="tancarSessio()">Tancar Sessió</button>
+    </div>
+  </div>
+</nav>
+
 <article>
   <div class="container-form">
     <div class="info-form">
@@ -26,7 +42,6 @@
   <div class="g-recaptcha" data-sitekey="Clave del sitio"></div>
 </aside>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47454.88300873964!2d2.783647733377539!3d41.98030862868054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae72798c8fdab%3A0xaf3845b6a5296a6f!2sGirona!5e0!3m2!1ses!2ses!4v1679561660598!5m2!1ses!2ses" width="1500" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</body>
 <footer>
   <h1 id="footer_lletres">Les nostres xarxes socials:</h1>
   <a href="http://www.facebook.com/%22%3E "><img src="http://localhost:3080/imatges/facebook.jpg" class="Facebook"></a>

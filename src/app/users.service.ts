@@ -14,9 +14,9 @@ export class UsersService implements OnInit {
 
 
   constructor(private http:HttpClient) {
-    // this.http.get<any>('http://localhost:3080/api/firebase').subscribe((document) =>{
-    //   this.arrClients = document;
-    // });
+    this.http.get<any>('http://localhost:3080/api/firebase').subscribe((document) =>{
+      this.arrClients = document;
+    });
   }
 
   ngOnInit(): void {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { F2pComponent } from './f2p.component';
+import { SurpriseComponent } from './surprise.component';
 
 describe('F2pComponent', () => {
-  let component: F2pComponent;
-  let fixture: ComponentFixture<F2pComponent>;
+  let component: SurpriseComponent;
+  let fixture: ComponentFixture<SurpriseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ F2pComponent ]
+      declarations: [ SurpriseComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(F2pComponent);
+    fixture = TestBed.createComponent(SurpriseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ServeisService} from "../serveis.service";
 import {HttpClient} from "@angular/common/http";
 import {UsersService} from "../users.service";
+import {RegistreLoginService} from "../registre-login.service";
 
 @Component({
   selector: 'app-cistella',
@@ -15,10 +16,23 @@ export class CistellaComponent implements OnInit{
   canviMoneda = 0;
   preuActual: any;
 
-  constructor(private s: ServeisService, private http:HttpClient, private serv: UsersService) {
+  autenticat = this.registraServei.autenticat
+  nomAutenticat = this.registraServei.nomAutenticat
+
+  constructor(private s: ServeisService,
+              private http:HttpClient,
+              private serv: UsersService,
+              private registraServei: RegistreLoginService) {
 
   }
 
+  tancarSessio() {
+    this.registraServei.autenticat = false;
+    this.registraServei.nomAutenticat = 'null';
+    this.autenticat = false;
+    this.nomAutenticat = 'null';
+    console.log("funciona clic")
+  }
 
   ngOnInit() {
     const selectElement = document.getElementById("cryptosID") as HTMLSelectElement;
@@ -132,17 +146,17 @@ export class CistellaComponent implements OnInit{
           console.error("There was an error", error);
         }
       })
-    let params = [
-      {
-        // from: this.serv.walletName,
-        from: "0xEe6e5A87F17b6f587497d158e86Ee810E24a47F6",
-        to: "0x14c083cFbC76533D684A75D6eA4ba9933213e45a",
-        value: Number(this.canviMoneda).toString(16),
-        data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
-      },
-    ]
-    //@ts-ignore
-    await window.ethereum.request({method: "eth_sendTransaction"}, params);
+    // let params = [
+    //   {
+    //     // from: this.serv.walletName,
+    //     from: "0xEe6e5A87F17b6f587497d158e86Ee810E24a47F6",
+    //     to: "0x14c083cFbC76533D684A75D6eA4ba9933213e45a",
+    //     value: Number(this.canviMoneda).toString(16),
+    //     data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+    //   },
+    // ]
+    // //@ts-ignore
+    // await window.ethereum.request({method: "eth_sendTransaction"}, params);
 
     this.clearAll()
   }

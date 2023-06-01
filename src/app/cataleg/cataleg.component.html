@@ -1,3 +1,20 @@
+<nav id="menu">
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/cataleg" routerLinkActive="active">Catàleg</a>
+  <a routerLink="/registre" routerLinkActive="active">Registre Client</a>
+  <a routerLink="/cistella" routerLinkActive="active">Cistella</a>
+  <a routerLink="/condicions" routerLinkActive="active">Condicions</a>
+  <a routerLink="/contacte" routerLinkActive="active">Contacte</a>
+  <a *ngIf="autenticat" routerLink="/perfil" routerLinkActive="active">Perfil</a>
+  <div id="loginbar">
+    <a *ngIf="!autenticat" class="ab-item" id="login" routerLink="/login" routerLinkActive="active">Inicia la sessió</a>
+    <select *ngIf="autenticat" name="logout" id="logout">
+      <option selected hidden>Hola, {{nomAutenticat}}</option>
+      <option (click)="tancarSessio()">Tancar sessió</option>
+    </select>
+  </div>
+</nav>
+
 <div *ngFor="let product of products" class="producte">
   <h3>
     <div *ngIf="product">

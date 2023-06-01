@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {RegistreLoginService} from "../registre-login.service";
 
 
 @Component({
@@ -7,5 +8,18 @@ import {Component} from '@angular/core';
   styleUrls: ['./inici.component.css']
 })
 export class IniciComponent {
+  autenticat = this.registraServei.autenticat
+  nomAutenticat = this.registraServei.nomAutenticat
 
+  tancarSessio(){
+    this.registraServei.autenticat = false;
+    this.registraServei.nomAutenticat = 'null';
+    this.autenticat= false;
+    this.nomAutenticat= 'null';
+    console.log("funciona clic")
+  }
+
+
+  constructor(private registraServei: RegistreLoginService) {
+  }
 }
