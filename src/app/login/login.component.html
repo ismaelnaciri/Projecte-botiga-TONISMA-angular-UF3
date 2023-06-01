@@ -1,0 +1,26 @@
+<nav id="menu">
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/cataleg" routerLinkActive="active">Catàleg</a>
+  <a routerLink="/registre" routerLinkActive="active">Registre Client</a>
+  <a routerLink="/cistella" routerLinkActive="active">Cistella</a>
+  <a routerLink="/condicions" routerLinkActive="active">Condicions</a>
+  <a routerLink="/contacte" routerLinkActive="active">Contacte</a>
+</nav>
+
+
+<h1 style="text-align: center">Inici de sessió</h1>
+
+<div id="formulari">
+  <form (submit)="autenticar()" ngNativeValidate>
+    <div class="inputDiv">
+      <label for="correu"><b>Correu</b></label>
+      <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" id="correu" placeholder="Correu electrònic" required/>
+    </div>
+    <div class="inputDiv">
+      <label for="contrasenya"><b>Contrasenya</b></label>
+      <input [(ngModel)]="passwd" [ngModelOptions]="{standalone: true}" type="password" id="contrasenya" placeholder="Contrasenya" required>
+    </div>
+    <button type="submit">Entra</button>
+
+  </form>
+</div>
